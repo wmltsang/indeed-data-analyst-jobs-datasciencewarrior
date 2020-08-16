@@ -75,4 +75,24 @@ where title ilike '%Analyst%'*/
 from data_analyst_jobs
 where title not ilike '%Analyst%' and title not ilike '%Analytics%';*/
 
+---correction question 9
+/*select count(*)
+from (select company, sum(review_count) as total_reviews,  avg(star_rating) as avg_rating
+from data_analyst_jobs
+where company is not null
+group by company
+having sum(review_count) > 5000
+order by company
+) as sub_query_10*/
+
+--correction question 10
+/*select 
+company, sum(review_count) as total_reviews,  round(avg(star_rating),2) as avg_rating
+from data_analyst_jobs
+group by company,star_rating
+having sum(review_count) > 5000
+order by star_rating desc
+limit 1*/
+
+
 
