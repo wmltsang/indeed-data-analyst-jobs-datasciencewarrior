@@ -86,13 +86,15 @@ order by company
 ) as sub_query_10*/
 
 --correction question 10
+--Google has the highest rating with 4.3.
 /*select 
 company, sum(review_count) as total_reviews,  round(avg(star_rating),2) as avg_rating
 from data_analyst_jobs
+where star_rating is not null and company is not null
 group by company,star_rating
 having sum(review_count) > 5000
-order by star_rating desc
-limit 1*/
+order by round(avg(star_rating),2) desc*/
+
 
 
 
